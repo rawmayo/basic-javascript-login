@@ -10,90 +10,71 @@ export const validateEmptyInputs = (inputArray = []) => {
   return errors;
 };
 
-export const checkNameErrors = (isInvalid = false, { firstName, lastName }) => {
+export const checkNameErrors = ({ firstName, lastName }) => {
   const error = document.getElementById("name-error");
-  if (isInvalid) {
+  if (firstName.value.trim().length < 1 || lastName.value.trim().length < 1) {
     firstName.classList.add("input-error");
     lastName.classList.add("input-error");
     error.classList.remove("hidden");
     error.innerHTML =
       '<i class="fa-solid fa-circle-exclamation"></i> Your complete name is required';
-    return [firstName, lastName];
   } else if (firstName.value.length < 3 || lastName.value.length < 3) {
     error.innerHTML =
       '<i class="fa-solid fa-circle-exclamation"></i> Please enter your correct name';
-    return [firstName, lastName];
   } else {
     firstName.classList.remove("input-error");
     lastName.classList.remove("input-error");
     error.classList.remove("add");
     error.textContent = "";
-    return [];
   }
 };
 
-export const checkUsernameErrors = (
-  isInvalid = false,
-  { username },
-  useInLogin = false
-) => {
+export const checkUsernameErrors = ({ username }, useInLogin = false) => {
   const error = document.getElementById("username-error");
-  if (isInvalid) {
+  if (username.value.trim().length < 1) {
     username.classList.add("input-error");
     error.classList.remove("hidden");
     error.innerHTML =
       '<i class="fa-solid fa-circle-exclamation"></i> Username is required';
-    return [username];
   } else if (username.value.length < 5 && !useInLogin) {
     error.innerHTML =
       '<i class="fa-solid fa-circle-exclamation"></i> Username is too short';
-    return [username];
   } else {
     username.classList.remove("input-error");
     error.classList.add("hidden");
     error.textContent = "";
-    return [];
   }
 };
 
 export const checkPasswordErrors = (
-  isInvalid = false,
-  { password },
+  { password, confirmPassword },
   useInLogin = false
 ) => {
   const error = document.getElementById("password-error");
-  if (isInvalid) {
+  if (password.value.trim().length < 1) {
     password.classList.add("input-error");
     error.innerHTML =
       '<i class="fa-solid fa-circle-exclamation"></i> Password is required';
     error.classList.remove("hidden");
-    return [password];
   } else if (password.value.length < 5 && !useInLogin) {
     error.innerHTML =
       '<i class="fa-solid fa-circle-exclamation"></i> Password is too short';
-    return [password];
-  } else {
-    password.classList.remove("input-error");
-    error.textContent = "";
-    error.classList.add("hidden");
-    return [];
-  }
-};
-
-export const checkPasswordsMatched = ({ password, confirmPassword }) => {
-  const error = document.getElementById("confirm-error");
-  if (password.value !== confirmPassword.value) {
+  } else if (
+    confirmPassword !== null &&
+    password.value !== confirmPassword.value &&
+    !useInLogin
+  ) {
     password.classList.add("input-error");
     confirmPassword.classList.add("input-error");
     error.innerHTML =
       '<i class="fa-solid fa-circle-exclamation"></i> Passwords do not match';
     error.classList.remove("hidden");
-    return false;
   } else {
     password.classList.remove("input-error");
-    confirmPassword.classList.remove("input-error");
+    if (confirmPassword !== null) {
+      confirmPassword.classList.remove("input-error");
+    }
     error.textContent = "";
     error.classList.add("hidden");
-    return true;
   }
 };

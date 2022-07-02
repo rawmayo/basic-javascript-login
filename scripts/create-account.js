@@ -4,7 +4,6 @@ import {
   checkNameErrors,
   checkUsernameErrors,
   checkPasswordErrors,
-  checkPasswordsMatched,
 } from "./imports/validate.js";
 
 const initialize = () => {
@@ -22,37 +21,19 @@ const initialize = () => {
   // Check if user creates a new account
   registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    let inputs = [firstName, lastName, username, password];
-    let errors = [];
-
-    // Validate the inputs if they are empty or not
-    const validation = validateEmptyInputs(inputs);
+    let inputs = [firstName, lastName, username, password, confirmPassword];
 
     // If firstname and lastname are empty, show the error
-    checkNameErrors(
-      validation.includes("firstname") || validation.includes("lastname"),
-      { firstName, lastName }
-    );
+    checkNameErrors({ firstName, lastName });
 
     // If username is empty, show the error
-    errors = checkUsernameErrors(
-      validation.includes("username"),
-      { username },
-      false
-    );
+    checkUsernameErrors({ username }, false);
 
     // If password is empty, show the error
-    errors = checkPasswordErrors(
-      validation.includes("password"),
-      { password },
-      false
-    );
+    checkPasswordErrors({ password, confirmPassword }, false);
 
     // If there are still errors, do not proceed
-    if (errors.length > 0) return;
-
-    //If the passwords do not match, do not proceed
-    if (!checkPasswordsMatched({ password, confirmPassword })) return;
+    if (document.querySelectorAll(".input-error").length > 0) return;
 
     // If everything else is valid, register a new account
     document.getElementById("create").innerHTML =

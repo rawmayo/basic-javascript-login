@@ -23,10 +23,10 @@ const initialize = () => {
     const validation = validateEmptyInputs(inputs);
 
     // If username is empty, show the error
-    checkUsernameErrors(validation.includes("username"), { username }, true);
+    checkUsernameErrors({ username }, true);
 
     // If password is empty, show the error
-    checkPasswordErrors(validation.includes("password"), { password }, true);
+    checkPasswordErrors({ password, confirmPassword: null }, true);
 
     // If there are still errors, do not proceed
     if (validation.length > 0) return;

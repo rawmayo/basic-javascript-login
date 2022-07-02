@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+:root {
+  --dark-grey: #272936;
+  --grey: #323645;
+  --light: #fdfcfe;
+  --light-blue: #1e90f4;
+  --light-grey: #949baa;
+  --error: #d6413e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  color: var(--light);
+  background-color: var(--dark-grey);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--light-blue);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow: hidden;
+  height: 100%;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+.app-name {
+  margin: 2rem 0;
+}
+
+.form-text {
+  color: var(--light-grey);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.85rem;
+  display: inline-block;
+}
+
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-control {
+  width: 100%;
+  color: var(--light);
+  background-color: var(--grey);
+  border: 2px solid transparent;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 0.65rem;
+}
+
+.form-group label {
+  color: var(--light-grey);
+  margin-bottom: 0.35rem;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.login-container {
+  margin-bottom: 2rem;
+}
+
+.dot-blue {
+  color: var(--light-blue);
+  font-size: 3rem;
+}
+
+.form-label h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.already-member {
+  color: var(--light-grey);
+  text-transform: capitalize;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.form-control:focus {
+  border: 2px solid var(--light-blue);
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background-color: var(--light-blue);
+  color: var(--light);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  border: 2px solid var(--light-blue);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--light-blue);
+}
+
+.pull-left {
+  margin-right: 10px;
+}
+
+.error {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--error);
+}
+
+.login-error {
+  color: var(--light);
+  background-color: var(--error);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.error i {
+  margin-right: 0.15rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.input-error {
+  border: 2px solid var(--error);
+}

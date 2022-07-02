@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Create an account</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="app-name">
+          <h1><i class="fa-brands fa-airbnb"></i>irBnb</h1>
+        </div>
+        <div class="login-container">
+          <form id="register-form" action="#">
+            <div class="form-label">
+              <span class="form-text">Start for free</span>
+              <h3>Create new account<span class="dot-blue">.</span></h3>
+              <span class="already-member"
+                >Already a member? <a href="index.html">Login</a></span
+              >
+            </div>
+            <div class="form-group d-grid ai-center">
+              <div class="pull-left">
+                <label for="firstname">First name</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  autocomplete="off"
+                  class="form-control"
+                />
+              </div>
+              <div class="pull-right">
+                <label for="lastname">Last name</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  autocomplete="off"
+                  class="form-control"
+                />
+              </div>
+              <span id="name-error" class="error hidden"></span>
+            </div>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                autocomplete="off"
+                class="form-control"
+              />
+              <span id="username-error" class="error hidden"></span>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                autocomplete="off"
+                class="form-control"
+              />
+              <span id="password-error" class="error hidden"></span>
+            </div>
+            <div class="form-group">
+              <label for="confirm">Confirm your password</label>
+              <input
+                type="password"
+                name="confirm"
+                id="confirm"
+                autocomplete="off"
+                class="form-control"
+              />
+              <span id="confirm-error" class="error hidden"></span>
+            </div>
+            <div class="form-group">
+              <button id="create" class="btn" type="submit">
+                Create account
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script type="module" src="./scripts/create-account.js" defer></script>
+</html>

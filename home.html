@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>AirBnb | Home</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div
+          class="app-name"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <h1><i class="fa-brands fa-airbnb"></i>irBnb</h1>
+          <i
+            id="logout"
+            class="fa-solid fa-right-from-bracket"
+            style="
+              cursor: pointer;
+              background-color: #d6413e;
+              padding: 0.85rem;
+              border-radius: 5px;
+            "
+          ></i>
+        </div>
+        <div class="profile-container">
+          <h1 id="profile"></h1>
+          <p
+            id="user-id"
+            style="margin-top: 0.55rem; font-weight: 500; color: #1e90f4"
+          ></p>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script type="module" src="./scripts/home.js" defer></script>
+</html>

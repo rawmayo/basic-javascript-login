@@ -42,6 +42,7 @@ const initialize = () => {
       } else {
         clearTextFields(inputs);
         // If credentials are invalid, show error
+        username.focus();
         document.getElementById("login").textContent = "Log In";
         document.querySelector(".login-error").classList.remove("hidden");
       }
